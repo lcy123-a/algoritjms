@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "(gdb) Launch",
+        "preLaunchTask": "C/C++: g++.exe 生成活动文件",//与tasks.json中的label内容相同
+        "type": "cppdbg",//配置类型为cppdbg
+        "request": "launch",//请求配置类型可以为launch或attach
+        "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",//调试程序的路径名称
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": true,//true显示外置的控制台窗口，false显示VS Code中内置的终端
+        "MIMode": "gdb",
+        "miDebuggerPath": "C:/mingw/mingw64/bin/gdb.exe",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+    }
+]
+}
