@@ -48,3 +48,17 @@ void print_lcs(vector<vector<char>> b, vector<char> X, int i, int j) {
         print_lcs(b, X, i, j - 1);
     }
 }
+
+void print_lcss(vector<vector<int>> c, vector<char> X, vector<char> Y, int i, int j) {
+    if (c[i][j] == 0) {
+        return;
+    }
+    if (X[i - 1] == Y[j - 1]) {
+        print_lcss(c, X, Y, i - 1, j - 1);
+        cout << X[i - 1] << " ";
+    } else if (c[i - 1][j] >= c[i][j - 1]) {
+        print_lcss(c, X, Y, i - 1, j);
+    } else {
+        print_lcss(c, X, Y, i, j - 1);
+    }
+}
